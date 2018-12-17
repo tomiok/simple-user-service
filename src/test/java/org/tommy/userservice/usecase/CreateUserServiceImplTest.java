@@ -49,7 +49,7 @@ public class CreateUserServiceImplTest {
     verify(repo, times(1)).save(any(User.class));
   }
 
-  static CreateUserService.CreateOrUpdateUserCommand newCmd(
+  public static CreateUserService.CreateOrUpdateUserCommand newCmd(
       String email, String username, String firstName, String lastName, String pass, String phone
   ) {
     CreateUserService.CreateOrUpdateUserCommand cmd = new CreateUserService.CreateOrUpdateUserCommand();
