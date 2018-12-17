@@ -6,8 +6,8 @@ VOLUME /tmp
 # Copy and rename the jar
 COPY target/*.jar app.jar
 
-# Expose port 8100
-EXPOSE 8100
+# Expose port 8080
+EXPOSE 8080
 
 # Touch the archive for timestamp
 RUN sh -c 'touch /app.jar'
