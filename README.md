@@ -8,7 +8,7 @@ Provides the APIs and the create, read, update and delete users.
 ## Tech stack
 
 - Java 8
-- Spring boot
+- Spring boot 2.1.1
 - Swagger
 - H2 in memory database
 - Maven
