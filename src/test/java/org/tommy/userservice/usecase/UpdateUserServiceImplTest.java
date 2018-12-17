@@ -8,7 +8,10 @@ import static org.mockito.Mockito.when;
 import static org.tommy.userservice.usecase.CreateUserServiceImplTest.newCmd;
 
 import java.util.Optional;
+import javax.persistence.EntityNotFoundException;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -19,6 +22,9 @@ import org.tommy.userservice.model.UserStatus;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UpdateUserServiceImplTest {
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Mock
   private UserRepo repository;
@@ -57,6 +63,7 @@ public class UpdateUserServiceImplTest {
 
   @Test
   public void shouldFail_GivenWrongUsername() {
-
+    thrown.expect(EntityNotFoundException.class);
+    updateUserService.updateUser(null, "tomasf");
   }
 }

@@ -60,7 +60,6 @@ public class FindUserServiceImplTest {
   @Test
   public void shouldFail_GivenWrongUsername() {
     thrown.expect(EntityNotFoundException.class);
-    when(repository.findByUsername("some-username")).thenReturn(Optional.empty());
     findUserService.findByUsername("tomiok");
 
   }
